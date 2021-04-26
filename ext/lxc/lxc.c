@@ -109,7 +109,7 @@ lxc_run_command(VALUE self, VALUE rb_command)
     cmd.argv = ruby_to_c_string_array(rb_command);
 
     ret = lxc_attach_run_command(&cmd);
-    if (ret == -1)
+    if (ret == -1 || ret == 126 || ret == 127)
         rb_raise(Error, "unable to run command on attached container");
     /* NOTREACHED */
     return Qnil;
