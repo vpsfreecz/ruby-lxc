@@ -1306,6 +1306,7 @@ container_keys(VALUE self, VALUE rb_key)
     struct container_data *data;
     struct lxc_container *container;
     VALUE rb_keys;
+    VALUE rb_ret;
 
     Data_Get_Struct(self, struct container_data, data);
     container = data->container;
@@ -1325,9 +1326,10 @@ container_keys(VALUE self, VALUE rb_key)
         rb_raise(Error, "unable to read configuration keys");
     }
     rb_keys = rb_str_new2(value);
-    free(value);
 
-    return value[len2-1] == '\n' ?  rb_str_split(rb_keys, "\n") : rb_keys;
+    rb_ret = value[len2-1] == '\n' ? rb_str_split(rb_keys, "\n") : rb_keys;
+    free(value);
+    return rb_ret;
 }
 
 /*
