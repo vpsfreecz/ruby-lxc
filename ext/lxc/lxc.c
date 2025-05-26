@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <errno.h>
+#include <sys/wait.h>
 
 #define SYMBOL(s) ID2SYM(rb_intern(s))
 
