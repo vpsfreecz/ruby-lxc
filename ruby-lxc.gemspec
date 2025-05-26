@@ -7,6 +7,9 @@ Gem::Specification.new do |s|
   s.summary    = 'Ruby bindings for liblxc'
   s.author     = 'Andre Nathan'
   s.email      = 'andre@digirati.com.br'
+  s.license    = 'LGPL-2.1-only'
+
+  s.required_ruby_version = '>= 3.0'
 
   s.files      = Dir.glob('ext/**/*.{c,rb}') +
                  Dir.glob('lib/**/*.rb')
