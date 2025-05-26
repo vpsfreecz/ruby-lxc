@@ -13,10 +13,6 @@ Gem::Specification.new do |s|
   s.extensions = 'ext/lxc/extconf.rb'
   s.has_rdoc   = true
 
-  s.add_development_dependency "rdoc"
-  s.add_development_dependency "rdoc-data"
-  s.add_development_dependency "rake-compiler"
-
   s.homepage    = 'https://github.com/lxc/ruby-lxc'
   s.description = <<-EOF
     Ruby-LXC is a Ruby binding for the liblxc library, allowing
