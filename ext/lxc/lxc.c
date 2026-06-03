@@ -471,8 +471,11 @@ lxc_attach_exec_block_cb(VALUE block)
 }
 
 static VALUE
-lxc_attach_exec_rescue_cb()
+lxc_attach_exec_rescue_cb(VALUE payload, VALUE error)
 {
+    (void)payload;
+    (void)error;
+
     return INT2FIX(1);
 }
 
